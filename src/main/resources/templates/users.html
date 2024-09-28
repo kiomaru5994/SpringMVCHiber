@@ -5,31 +5,39 @@
     <title>Пользователи</title>
 </head>
 <body>
-<h3>Для редактирования пользователя просто нажмите на имя любого из них.</h3> <br>
-<div class="snippet-container">
-    <table class="table table-bordered">
+<div style="text-align: center; margin-top: 30px;">
+    <h3>Для редактирования пользователя просто нажмите на имя любого из них.</h3>
+</div>
+
+<div style="margin: 20px auto; width: 80%;">
+    <table style="width: 100%; border-collapse: collapse;" border="1">
         <thead>
-            <tr>
-                <th>ID</th>
-                <th>First name</th>
-                <th>Second name</th>
-                <th>Age</th>
-                <th>Login name</th>
-                <th>Email</th>
-            </tr>
+        <tr style="background-color: #f2f2f2;">
+            <th>ID</th>
+            <th>First name</th>
+            <th>Second name</th>
+            <th>Age</th>
+            <th>Login name</th>
+            <th>Email</th>
+        </tr>
         </thead>
         <tbody>
-            <tr th:each="user : ${users}">
-                <td th:text="${user.getId()}"></td>
-                <td th:text="${user.getFirstName()}"></td>
-                <td th:text="${user.getLastName()}"></td>
-                <td th:text="${user.getAge()}"></td>
-                <td th:text="${user.getUserLogin()}"></td>
-                <td th:text="${user.getEmail()}"></td>
-            </tr>
+        <tr th:each="user : ${users}" style="text-align: center;">
+            <td th:text="${user.getId()}"></td>
+            <td>
+                <a th:href="@{'/users/' + ${user.getId()}}" th:text="${user.getFirstName()}"></a>
+            </td>
+            <td th:text="${user.getLastName()}"></td>
+            <td th:text="${user.getAge()}"></td>
+            <td th:text="${user.getUserLogin()}"></td>
+            <td th:text="${user.getEmail()}"></td>
+        </tr>
         </tbody>
     </table>
 </div>
-<a href="new">Создать пользователя</a>
+
+<div style="text-align: center; margin-top: 20px;">
+    <a href="new">Создать пользователя</a>
+</div>
 </body>
 </html>
