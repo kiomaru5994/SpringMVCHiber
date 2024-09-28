@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Пользователи</title>
+</head>
+<body>
+<h3>Для редактирования пользователя просто нажмите на имя любого из них.</h3> <br>
+<div class="snippet-container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First name</th>
+                <th>Second name</th>
+                <th>Age</th>
+                <th>Login name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.getId()}"></td>
+                <td th:text="${user.getFirstName()}"></td>
+                <td th:text="${user.getLastName()}"></td>
+                <td th:text="${user.getAge()}"></td>
+                <td th:text="${user.getUserLogin()}"></td>
+                <td th:text="${user.getEmail()}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<a href="new">Создать пользователя</a>
+</body>
+</html>
