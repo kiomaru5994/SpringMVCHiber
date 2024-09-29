@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Создание</title>
+    <title>Создать</title>
 </head>
 <body>
 <table align="center" style="margin-top: 50px;">
@@ -13,7 +13,7 @@
     </tr>
     <tr>
         <td colspan="2">
-            <form th:method="POST" th:action="@{/users}" th:object="${user}">
+            <form th:method="POST" th:action="@{/users/create}" th:object="${user}">
                 <table>
                     <tr>
                         <td><label for="firstName">Имя:</label></td>
